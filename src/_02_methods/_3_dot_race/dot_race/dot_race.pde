@@ -28,7 +28,7 @@ void draw() {
       ellipse(x, 100, 50, 50);
     //3. Make the ellipse a nice color
 if (mousePressed){
- x+=15;
+ x+=5;
 }
     //4. If the mouse is pressed change the x value so that the dot moves to the right
 
@@ -37,23 +37,25 @@ if (mousePressed){
 
     //6. Use an if statement to play a sound (ding) when your dot crosses the finish line (right side of window).
     //   A playSound() method is provided (you have to uncomment the code at the bottom of this program to get this to work)
-    
+    if (x>800){
+      playSound();
+    }
 
 }
 
-
+/*
 import ddf.minim.*;
-boolean soundPlayed = false;
+boolean soundPlayed = false;*/
 void playSound() {
   
-  if (canPlaySounds) {
+ /* if (canPlaySounds) {
     if (!soundPlayed) {
         Minim minim = new Minim(this);
         AudioSample sound = minim.loadSample("ding.wav");
         sound.trigger();
         soundPlayed = true;
     }
-  }
+  }*/
   fill(0);
   textSize(36);
   text("WINNER!!", width/2, height/2);
